@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "title": "The Quantum Labyrinth",
+        "author": "Dr. Aris Thorne",
+        "description": "A deep dive into the mysteries of subatomic particles and the fabric of reality.",
+        "category": "Science",
+        "available_quantity": 5,
+        "image_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+        "id": 2,
+        "title": "Shadows of the Forgotten",
+        "author": "Elena Vance",
+        "description": "A gripping tale of a lost civilization discovered in the heart of the Amazon.",
+        "category": "Story",
+        "available_quantity": 12,
+        "image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+        "id": 3,
+        "title": "Mastering Rust",
+        "author": "Marcus Holloway",
+        "description": "The ultimate guide to systems programming with the Rust language.",
+        "category": "Tech",
+        "available_quantity": 8,
+        "image_url": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+        "id": 4,
+        "title": "The Gene Architect",
+        "author": "Sarah Jenkins",
+        "description": "Exploring the ethics and future of CRISPR and genetic engineering.",
+        "category": "Science",
+        "available_quantity": 3,
+        "image_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+        "id": 5,
+        "title": "Whispers in the Wind",
+        "author": "Thomas Hardy",
+        "description": "A collection of short stories centered around rural life in the 19th century.",
+        "category": "Story",
+        "available_quantity": 20,
+        "image_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+        "id": 6,
+        "title": "Neural Network Fundamentals",
+        "author": "Dr. Li Wei",
+        "description": "A comprehensive introduction to artificial intelligence and deep learning.",
+        "category": "Tech",
+        "available_quantity": 15,
+        "image_url": "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+        "id": 7,
+        "title": "Beyond the Event Horizon",
+        "author": "Neil deGrasse Tyson",
+        "description": "An exploration of black holes and the edges of the known universe.",
+        "category": "Science",
+        "available_quantity": 7,
+        "image_url": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+        "id": 8,
+        "title": "Cybersecurity Frontiers",
+        "author": "Aiden Pearce",
+        "description": "Defending modern infrastructure against evolving digital threats.",
+        "category": "Tech",
+        "available_quantity": 10,
+        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+        "id": 9,
+        "title": "The Midnight Library",
+        "author": "Matt Haig",
+        "description": "Between life and death there is a library, and within that library, the shelves go on forever.",
+        "category": "Story",
+        "available_quantity": 25,
+        "image_url": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+        "id": 10,
+        "title": "Clean Architecture",
+        "author": "Robert C. Martin",
+        "description": "A craftsman's guide to software structure and design.",
+        "category": "Tech",
+        "available_quantity": 6,
+        "image_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+        "id": 11,
+        "title": "Evolution's Edge",
+        "author": "Elizabeth Kolbert",
+        "description": "Examining the impact of climate change on biodiversity and extinction.",
+        "category": "Science",
+        "available_quantity": 4,
+        "image_url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+        "id": 12,
+        "title": "The Last Kingdom",
+        "author": "Bernard Cornwell",
+        "description": "The first book in the Saxon Stories, following the birth of England.",
+        "category": "Story",
+        "available_quantity": 18,
+        "image_url": "https://images.unsplash.com/photo-1533134486753-c81769195283?q=80&w=500&auto=format&fit=crop"
+    }
+]
