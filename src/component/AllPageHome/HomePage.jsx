@@ -4,6 +4,7 @@ import Marquees from './Marquees';
 import TopReaders from './TopLeader';
 import { User } from 'lucide-react';
 import UserTestimonial from './UserTestimonial';
+import FeaturedBooks from './FeaturedBooks';
 
 const HomePage = () => {
     return (
@@ -13,6 +14,9 @@ const HomePage = () => {
      </section>
 <section>
     <Marquees></Marquees>
+</section>
+<section>
+    <FeaturedBooks></FeaturedBooks>
 </section>
 <section>
     <TopReaders></TopReaders>

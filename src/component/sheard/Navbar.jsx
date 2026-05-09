@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 
 export const navItems = [
   { id: 1, name: 'Home', path: '/', auth: false },
-  { id: 2, name: 'All Books', path: '/all-books', auth: false },
+  { id: 2, name: 'All Books', path: '/allbooks', auth: false },
   { id: 3, name: 'My Profile', path: '/profile', auth: true },
 ];
 
