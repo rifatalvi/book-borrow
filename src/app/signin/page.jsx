@@ -17,9 +17,16 @@ const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
  const hendelGoogle = async () =>{
-              const data = await authClient.signIn.social({
-    provider: "google",
-  });
+  try {
+        console.log("Google Login Initiated...");
+        await authClient.signIn.social({
+            provider: "google",
+            callbackURL: "/", 
+        });
+    } catch (error) {
+        console.error("Google Signin Error:", error);
+        toast.error("Google sign-in failed!");
+    }
 }
   const toggleVisibility = () => setIsVisible(!isVisible);
 
