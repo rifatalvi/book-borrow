@@ -5,8 +5,9 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from "../../../public/logo.png";
-import { usePathname } from 'next/navigation';
-
+import { redirect, usePathname } from 'next/navigation';
+import { authClient, signOut, useSession } from '@/lib/auth-client';
+import { toast } from 'react-toastify';
 export const navItems = [
   { id: 1, name: 'Home', path: '/', auth: false },
   { id: 2, name: 'All Books', path: '/allbooks', auth: false },
@@ -16,12 +17,13 @@ export const navItems = [
 const Navbar = () => {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const isLoggedIn = null; 
-
+  const { data } =useSession();
+  const isLoggedIn = data?.user;
+ console.log(isLoggedIn);
   return (
     <nav className="sticky top-0 w-full z-50 border-b border-gray-100 bg-white/80 backdrop-blur-xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)]">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        
+
         {/* Logo Section with Hover Effect */}
         <Link
           href="/"
@@ -41,11 +43,10 @@ const Navbar = () => {
             <li key={item.id}>
               <Link
                 href={item.path}
-                className={`relative py-2 transition-colors duration-300 ${
-                  pathname === item.path
+                className={`relative py-2 transition-colors duration-300 ${pathname === item.path
                     ? 'text-indigo-600'
                     : 'text-gray-500 hover:text-indigo-600'
-                }`}
+                  }`}
               >
                 {item.name}
                 {pathname === item.path && (
@@ -61,30 +62,47 @@ const Navbar = () => {
           {!isLoggedIn ? (
             <>
               <Link
-                href="/auth/signin"
+                href="/signin"
                 className="text-sm font-bold text-gray-600 hover:text-indigo-600 transition"
               >
                 Sign In
               </Link>
 
               <Link
-                href="/auth/signup"
+                href="/signup"
                 className="rounded-xl bg-indigo-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-indigo-100 hover:bg-indigo-700 hover:shadow-indigo-200 transition-all active:scale-95"
               >
                 Sign Up
               </Link>
             </>
           ) : (
-            <div className="flex items-center gap-4">
-              <Avatar 
-                isBordered 
-                as="button" 
-                className="transition-transform" 
-                color="primary" 
-                size="sm" 
-                src={isLoggedIn?.image} 
-              />
-              <button className="rounded-xl bg-red-50 px-5 py-2 text-sm font-bold text-red-600 border border-red-100 hover:bg-red-500 hover:text-white transition-all">
+
+            <div className="flex items-center gap-3">
+              <Avatar>
+                <Avatar.Image alt={isLoggedIn?.name}
+                referrerPolicy="no-referrer"
+                src={isLoggedIn?.image} />
+                <Avatar.Fallback>
+                  {isLoggedIn?.name.slice(0, 2)}
+                </Avatar.Fallback>
+              </Avatar>
+
+              <button
+                onClick={async () => {
+                  try {
+                    const { error } = await signOut();
+                    redirect('/signin');
+
+                    // Success message er jonno toast.info ba toast.success use koro
+                    // Ar error/red message er jonno toast.error
+                    toast.error('You just logged out successfully');
+
+                  } catch (error) {
+                    toast.error("Logout failed!");
+                  }
+                }}
+                className="rounded-lg cursor-pointer bg-red-500 px-4 py-2 text-sm text-white hover:bg-red-600"
+              >
                 Logout
               </button>
             </div>
@@ -108,9 +126,8 @@ const Navbar = () => {
               key={item.id}
               href={item.path}
               onClick={() => setOpen(false)}
-              className={`block text-base font-bold ${
-                pathname === item.path ? 'text-indigo-600' : 'text-gray-600 hover:text-indigo-600'
-              }`}
+              className={`block text-base font-bold ${pathname === item.path ? 'text-indigo-600' : 'text-gray-600 hover:text-indigo-600'
+                }`}
             >
               {item.name}
             </Link>
@@ -119,8 +136,8 @@ const Navbar = () => {
           <div className="flex flex-col gap-3">
             {!isLoggedIn ? (
               <>
-                <Link href="/auth/signin" className="py-2 text-gray-600 font-bold">Sign In</Link>
-                <Link href="/auth/signup" className="rounded-xl bg-indigo-600 py-3 text-center text-white font-bold">Sign Up</Link>
+                <Link href="/signin" className="py-2 text-gray-600 font-bold">Sign In</Link>
+                <Link href="/signup" className="rounded-xl bg-indigo-600 py-3 text-center text-white font-bold">Sign Up</Link>
               </>
             ) : (
               <button className="w-full rounded-xl bg-red-500 py-3 text-white font-bold">Logout</button>
