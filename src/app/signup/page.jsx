@@ -145,16 +145,16 @@ const SignUpPage = () => {
 
                 </form>
                 <p className='text-center'>or</p>
-                <Button
-                    onClick={hendelGoogle}
 
+                <Button
+                    type="button"
+                    onPress={() => hendelGoogle()}
                     fullWidth
                     size="lg"
-                    variant="outline"
-                    isLoading={false}
-                    className=" text-black font-bold shadow-lg shadow-indigo-200  rounded-2xl transition-all active:scale-[0.98]"
-                > <GrGoogle></GrGoogle>
-                    Log In with Google
+                    variant="bordered"
+                    className="text-black font-bold shadow-lg rounded-2xl"
+                >
+                    <GrGoogle /> Log In with Google
                 </Button>
                 <div className="mt-6 text-center">
                     <p className="text-sm text-gray-600">

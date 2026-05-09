@@ -6,7 +6,7 @@ import Image from "next/image";
 import logo from "../../../public/logo.png";
 import { Button, Card, CardHeader, Input } from "@heroui/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useForm, Controller } from "react-hook-form"; 
+import { useForm, Controller } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
@@ -16,18 +16,18 @@ const LoginPage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
- const hendelGoogle = async () =>{
-  try {
-        console.log("Google Login Initiated...");
-        await authClient.signIn.social({
-            provider: "google",
-            callbackURL: "/", 
-        });
+  const hendelGoogle = async () => {
+    try {
+      console.log("Google Login Initiated...");
+      await authClient.signIn.social({
+        provider: "google",
+        callbackURL: "/",
+      });
     } catch (error) {
-        console.error("Google Signin Error:", error);
-        toast.error("Google sign-in failed!");
+      console.error("Google Signin Error:", error);
+      toast.error("Google sign-in failed!");
     }
-}
+  }
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   const {
@@ -53,9 +53,9 @@ const LoginPage = () => {
       });
 
       if (error) {
-        
-        const errorMessage = error.status === 401 
-          ? "Invalid email or password" 
+
+        const errorMessage = error.status === 401
+          ? "Invalid email or password"
           : (error.message || "Something went wrong");
 
         toast.error('Login Failed', {
@@ -66,7 +66,7 @@ const LoginPage = () => {
         toast.success('Login Successful', {
           description: 'You have successfully signed in to your account.',
         });
-        router.push("/"); 
+        router.push("/");
       }
     } catch (err) {
       toast.error('Error', { description: 'An unexpected error occurred.' });
@@ -134,7 +134,7 @@ const LoginPage = () => {
               <Controller
                 name="password"
                 control={control}
-                rules={{ 
+                rules={{
                   required: "Password is required",
                   minLength: { value: 6, message: "Min 6 characters" }
                 }}
@@ -173,18 +173,19 @@ const LoginPage = () => {
               >
                 Sign In
               </Button>
-              
+
               <p className="text-center  border-2 border-t-gray-300 border-b-gray-200">or</p>
 
-                 <Button
-               onClick={hendelGoogle}
+
+              <Button
+                type="button"
+                onPress={() => hendelGoogle()}
                 fullWidth
                 size="lg"
-                variant="outline"
-                isLoading={isLoading}
-                className=" text-black font-bold shadow-lg shadow-indigo-200  rounded-2xl transition-all active:scale-[0.98]"
-              > <GrGoogle></GrGoogle>
-                Log In with Google
+                variant="bordered"
+                className="text-black font-bold shadow-lg rounded-2xl"
+              >
+                <GrGoogle /> Log In with Google
               </Button>
 
 
