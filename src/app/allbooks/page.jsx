@@ -33,7 +33,7 @@ const AllPageCard = async ({ searchParams }) => {
     const categorys = await booksCategory();
 
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center container mx-auto">
             <div className="w-full lg:flex justify-between items-center my-11 px-4">
                 
              

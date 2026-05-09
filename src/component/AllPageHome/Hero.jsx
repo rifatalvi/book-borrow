@@ -1,96 +1,92 @@
 import React from 'react';
 import Link from 'next/link';
 import { BookOpen, Search, ArrowRight, Sparkles } from 'lucide-react';
+import SwepSliide from '../sheard/SwepSliide';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden pt-20 pb-16">
-      {/* Background Abstract Shapes */}
-      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 transform opacity-5 pointer-events-none">
-        <div className="w-[600px] h-[600px] bg-blue-600 rounded-full blur-[120px]"></div>
+    <section className="relative min-h-[95vh] lg:min-h-[85vh] flex items-center bg-[#fcfcfd] overflow-hidden py-16 lg:py-20">
+      
+      
+      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 transform opacity-10 pointer-events-none">
+        <div className="w-[400px] h-[400px] lg:w-[700px] lg:h-[700px] bg-gradient-to-br from-blue-600 to-cyan-400 rounded-full blur-[100px] lg:blur-[150px]"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+      <div className="container mx-auto px-6 sm:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           
-          {/* Left Side: Content */}
-          <div className="flex-1 text-center lg:text-left space-y-8">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold tracking-wide uppercase border border-blue-100">
-              <Sparkles className="w-4 h-4 mr-2" />
-              Next-Gen Reading Platform
+         
+          <div className="w-full lg:w-1/2 text-center lg:text-left space-y-8 order-2 lg:order-1">
+            <div className="inline-flex items-center px-4 py-2 bg-white text-blue-600 rounded-full text-xs lg:text-sm font-bold tracking-wider uppercase border border-blue-100 shadow-sm">
+              <Sparkles className="w-4 h-4 mr-2 fill-blue-600" />
+              Digital Library Experience
             </div>
             
-            <h1 className="text-6xl lg:text-8xl font-extrabold text-slate-900 tracking-tight">
-              Borrow <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Books</span> <br /> 
-              Instantly.
-            </h1>
-            
-            <p className="text-xl text-slate-500 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Explore thousands of titles from our digital catalog. Borrow, read, and 
-              return books with just a click. Your next adventure starts here.
-            </p>
+            <div className="space-y-4">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-[900] text-slate-900 leading-[1.1] tracking-tighter">
+                Read More. <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+                  Spend Less.
+                </span>
+              </h1>
+              
+              <p className="text-base sm:text-lg lg:text-xl text-slate-500 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium">
+                Access thousands of premium books instantly. No late fees, no physical 
+                waiting. Your digital gateway to knowledge.
+              </p>
+            </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-5 justify-center lg:justify-start">
+           
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
               <Link 
                 href="/all-books" 
-                className="group flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-blue-600 transition-all duration-300 shadow-xl"
+                className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg active:scale-95"
               >
-                Browse Catalog
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Start Reading
+                <ArrowRight className="w-5 h-5" />
               </Link>
               
-              <div className="relative w-full sm:w-auto">
-                <input 
-                  type="text" 
-                  placeholder="Search by title or author..." 
-                  className="w-full sm:w-80 px-6 py-4 bg-white border border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-100 pl-12 transition-all shadow-sm"
-                />
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-              </div>
+              <Link 
+                href="/membership" 
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 border-2 border-slate-100 rounded-2xl font-bold hover:bg-slate-50 transition-all shadow-sm"
+              >
+                View Plans
+              </Link>
             </div>
 
-            {/* Social Proof / Stats */}
-            <div className="flex items-center justify-center lg:justify-start gap-10 pt-10 border-t border-slate-100">
-              <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-bold text-slate-900">15k+</h3>
-                <p className="text-sm font-medium text-slate-400 uppercase tracking-widest">Titles</p>
+            
+            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-slate-100 max-w-md mx-auto lg:mx-0">
+              <div>
+                <p className="text-xl sm:text-2xl font-black text-slate-900">25k+</p>
+                <p className="text-[10px] font-bold text-blue-500 uppercase tracking-widest font-mono">E-Books</p>
               </div>
-              <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-bold text-slate-900">8k+</h3>
-                <p className="text-sm font-medium text-slate-400 uppercase tracking-widest">Readers</p>
+              <div className="border-x border-slate-100 px-4">
+                <p className="text-xl sm:text-2xl font-black text-slate-900">10k+</p>
+                <p className="text-[10px] font-bold text-blue-500 uppercase tracking-widest font-mono">Readers</p>
               </div>
-              <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-bold text-slate-900">24/7</h3>
-                <p className="text-sm font-medium text-slate-400 uppercase tracking-widest">Access</p>
+              <div>
+                <p className="text-xl sm:text-2xl font-black text-slate-900">100%</p>
+                <p className="text-[10px] font-bold text-blue-500 uppercase tracking-widest font-mono">Free Trial</p>
               </div>
             </div>
           </div>
 
-          {/* Right Side: Image/Visual */}
-          <div className="flex-1 relative w-full">
-            <div className="relative z-20 rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white group">
-              <img 
-                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=1200" 
-                alt="Digital Library" 
-                className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+         
+          <div className="w-full lg:w-[45%] relative order-1 lg:order-2">
+       
+            <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 blur-2xl rounded-[3rem]"></div>
+            
+            <div className="relative z-20 rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl border-[4px] lg:border-[8px] border-white ring-1 ring-slate-100 aspect-[4/5] sm:aspect-video lg:aspect-auto">
+              <SwepSliide />
             </div>
             
-            {/* Floating Card UI */}
-            <div className="absolute -bottom-6 -left-10 z-30 bg-white p-6 rounded-2xl shadow-2xl hidden md:block animate-bounce-slow">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
-                  <BookOpen size={24} />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-400 font-bold uppercase tracking-tighter">Recently Borrowed</p>
-                  <p className="text-sm font-bold text-slate-800 italic">{"The Alchemist"}</p>
-                </div>
-              </div>
+           
+            <div className="absolute -top-4 -right-4 z-30 bg-white px-5 py-3 rounded-2xl shadow-xl border border-slate-50 hidden md:flex items-center gap-3">
+               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold italic text-sm">!</div>
+               <p className="text-[10px] font-black text-slate-700 uppercase tracking-tight">New: The Power of Habit</p>
             </div>
           </div>
-
+          
         </div>
       </div>
     </section>
