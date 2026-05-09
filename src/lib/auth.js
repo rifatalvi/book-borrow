@@ -19,5 +19,6 @@ export const auth = betterAuth({
             clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
         }, 
     },
+    trustedOrigins: ["https://book-borrow-zeta.vercel.app"]
   
 });
