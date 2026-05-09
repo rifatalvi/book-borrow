@@ -5,7 +5,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from "../../../public/logo.png";
-import { redirect, usePathname } from 'next/navigation';
+import { redirect, usePathname, useRouter } from 'next/navigation';
 import { authClient, signOut, useSession } from '@/lib/auth-client';
 import { toast } from 'react-toastify';
 export const navItems = [
@@ -16,10 +16,11 @@ export const navItems = [
 
 const Navbar = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const { data } =useSession();
   const isLoggedIn = data?.user;
- console.log(isLoggedIn);
+ 
   return (
     <nav className="sticky top-0 w-full z-50 border-b border-gray-100 bg-white/80 backdrop-blur-xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)]">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
@@ -91,12 +92,12 @@ const Navbar = () => {
                 onClick={async () => {
                   try {
                     const { error } = await signOut();
-                    redirect('/signin');
-
+                    
                     // Success message er jonno toast.info ba toast.success use koro
                     // Ar error/red message er jonno toast.error
                     toast.error('You just logged out successfully');
-
+                    
+                    router.push('/signin');
                   } catch (error) {
                     toast.error("Logout failed!");
                   }
@@ -140,7 +141,24 @@ const Navbar = () => {
                 <Link href="/signup" className="rounded-xl bg-indigo-600 py-3 text-center text-white font-bold">Sign Up</Link>
               </>
             ) : (
-              <button className="w-full rounded-xl bg-red-500 py-3 text-white font-bold">Logout</button>
+             <button
+                onClick={async () => {
+                  try {
+                    const { error } = await signOut();
+                    
+                    // Success message er jonno toast.info ba toast.success use koro
+                    // Ar error/red message er jonno toast.error
+                    toast.error('You just logged out successfully');
+                    
+                    router.push('/signin');
+                  } catch (error) {
+                    toast.error("Logout failed!");
+                  }
+                }}
+                className="rounded-lg cursor-pointer bg-red-500 px-4 py-2 text-sm text-white hover:bg-red-600"
+              >
+                Logout
+              </button>
             )}
           </div>
         </div>
