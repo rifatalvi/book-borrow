@@ -11,7 +11,7 @@ const FeaturedBooks = async () => {
 
             </p>
 
-            <div className="grid grid-cols-4 gap-5 mt-9 ">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-9 ">
                {
                 data.slice(0,4).map(book => <FeaturdBookCard key={book.id} book={book}>
                    

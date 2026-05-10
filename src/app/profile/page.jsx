@@ -7,7 +7,7 @@ import Image from "next/image";
 const ProfilePage = () => {
     const user  = useSession();
    const userData = user?.data?.user;
-   console.log(userData);
+  
     return (
             <div className="container mx-auto py-10 shadow-xl rounded-2xl  mt-10 bg-white">
         <div className="flex flex-col gap-6 items-center justify-center ">

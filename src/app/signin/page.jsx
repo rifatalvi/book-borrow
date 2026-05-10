@@ -18,20 +18,20 @@ const LoginPage = () => {
   const router = useRouter();
   const hendelGoogle = async () => {
     try {
-      console.log("Google Login Initiated...");
+     
       await authClient.signIn.social({
         provider: "google",
         callbackURL: "/",
       });
     } catch (error) {
-      console.error("Google Signin Error:", error);
+      
       toast.error("Google sign-in failed!");
     }
   }
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   const {
-    control, // Added control for Controller
+    control, 
     handleSubmit,
     formState: { errors },
   } = useForm({

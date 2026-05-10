@@ -15,7 +15,7 @@ export function UpdateModalPage() {
         name,
         image
      })
-     console.log({name , image})
+    
     }
   return (
     <Modal>

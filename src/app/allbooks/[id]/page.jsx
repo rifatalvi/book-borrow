@@ -9,7 +9,7 @@ const DetailPage = async ({ params }) => {
     const booked = await books();
     const { id } = await params;
   
-    // Book find kora hocche
+    
     const book = booked.find(book => book.id == id);
 
     if (!book) {
