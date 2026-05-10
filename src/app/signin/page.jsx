@@ -131,7 +131,8 @@ const LoginPage = () => {
               />
 
               {/* Password Input using Controller */}
-              <Controller
+            <div className="relative" >
+                <Controller
                 name="password"
                 control={control}
                 rules={{
@@ -151,18 +152,19 @@ const LoginPage = () => {
                     errorMessage={errors.password?.message}
                     type={isVisible ? "text" : "password"}
                     startContent={<Lock className="text-slate-400 w-5 h-5 flex-shrink-0" />}
-                    endContent={
-                      <button
-                        className="focus:outline-none flex items-center justify-center text-slate-400"
+                   
+                  />
+                  
+                )}
+              />
+                <button
+                        className="focus:outline-none flex items-center absolute right-2 top-2 justify-center text-slate-400"
                         type="button"
                         onClick={toggleVisibility}
                       >
                         {isVisible ? <FaEyeSlash /> : <FaEye />}
                       </button>
-                    }
-                  />
-                )}
-              />
+            </div>
 
               <Button
                 type="submit"

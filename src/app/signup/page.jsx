@@ -3,12 +3,16 @@ import { authClient, signOut } from '@/lib/auth-client';
 import { Button } from '@heroui/react';
 
 import { redirect } from 'next/navigation';
+import { useState } from 'react';
 
 import { useForm } from 'react-hook-form';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { GrGoogle } from 'react-icons/gr';
 import { toast } from 'react-toastify';
 
 const SignUpPage = () => {
+     const [isVisible, setIsVisible] = useState(false);
+       const toggleVisibility = () => setIsVisible(!isVisible);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const hendelGoogle = async () => {
         const data = await authClient.signIn.social({
@@ -105,7 +109,7 @@ const SignUpPage = () => {
                     </div>
 
                     {/* Password */}
-                    <div>
+                    <div className='relative'>
                         <label className="block text-sm font-medium text-gray-700">Password</label>
                         <input
                             type="password"
@@ -117,6 +121,13 @@ const SignUpPage = () => {
                             placeholder="••••••••"
                         />
                         {errors.password && <span className="text-red-500 text-xs">{errors.password.message}</span>}
+                        <button
+                            className="focus:outline-none flex items-center absolute right-2 top-9 justify-center text-slate-400"
+                            type="button"
+                            onClick={toggleVisibility}
+                        >
+                            {isVisible ? <FaEyeSlash /> : <FaEye />}
+                        </button>
                     </div>
 
                     {/* Terms and Conditions */}
@@ -158,7 +169,7 @@ const SignUpPage = () => {
                 </Button>
                 <div className="mt-6 text-center">
                     <p className="text-sm text-gray-600">
-                        Already have an account? <a href="/login" className="font-medium text-blue-600 hover:text-blue-500">Log in</a>
+                        Already have an account? <a href="/signin" className="font-medium text-blue-600 hover:text-blue-500">Log in</a>
                     </p>
                 </div>
             </div>
