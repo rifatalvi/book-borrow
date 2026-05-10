@@ -39,7 +39,7 @@ const Hero = () => {
            
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
               <Link 
-                href="/all-books" 
+                href="/allbooks" 
                 className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg active:scale-95"
               >
                 Start Reading
@@ -47,7 +47,7 @@ const Hero = () => {
               </Link>
               
               <Link 
-                href="/membership" 
+                href="/signup" 
                 className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 border-2 border-slate-100 rounded-2xl font-bold hover:bg-slate-50 transition-all shadow-sm"
               >
                 View Plans
