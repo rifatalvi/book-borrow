@@ -12,7 +12,7 @@ const SwepSliide = () => {
     "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=1200",
     "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=1200",
     "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=1200",
-    "https://images.unsplash.com/photo-1532012197367-6849f9ec9311?auto=format&fit=crop&q=80&w=1200"
+    "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&q=80&w=1200"
   ];
     return (
         <div className="flex-1 relative w-full">
