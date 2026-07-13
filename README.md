@@ -4,6 +4,9 @@ A seamless and modern web application designed to digitize the traditional libra
 
 ## 🌐 Live URL
 [Book Borrow Platform](https://book-borrow-zeta.vercel.app/)
+<img width="1919" height="946" alt="Screenshot 2026-07-13 215140" src="https://github.com/user-attachments/assets/1c58b8e7-1190-4107-92bc-9eed117518c2" />
+<img width="1919" height="944" alt="Screenshot 2026-07-13 215152" src="https://github.com/user-attachments/assets/6ae890c6-ed3b-474e-9262-494ee8fe932a" />
+
 
 ## 📖 Purpose
 The primary goal of this project is to provide a user-friendly digital interface for library management. It enables users to browse, search, and manage their reading interests while ensuring a secure and high-performance experience.[cite: 1]
