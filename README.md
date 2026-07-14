@@ -2,6 +2,11 @@
 
 A seamless and modern web application designed to digitize the traditional library experience. This platform allows users to explore a vast collection of books, filter them by categories, and borrow titles digitally with ease.[cite: 1]
 
+## 📖 Project Description
+The Online Book Borrowing Platform, currently live at book-borrow-zeta.vercel.app, is a high-performance web solution engineered to transition physical library systems into the digital era. Built on the modern Next.js framework, the platform offers an intuitive interface where readers can search a dynamic book catalog, use granular category filtering (Story, Tech, Science), and manage their reading interests seamlessly.
+
+Security and personalization are at the core of the application. Integrating BetterAuth for robust credential and Google social logins, the platform ensures protected private routes for single book details and individual profile updates. Combining smooth animations with a clutter-free UI, it provides a premium, responsive digital hub for book enthusiasts on any device.
+
 ## 🌐 Live URL
 [Book Borrow Platform](https://book-borrow-zeta.vercel.app/)
 <img width="1919" height="946" alt="Screenshot 2026-07-13 215140" src="https://github.com/user-attachments/assets/1c58b8e7-1190-4107-92bc-9eed117518c2" />
